@@ -9,6 +9,7 @@ var Arc = React.createClass({
 
   getDefaultProps: function() {
     return {
+      labelStrokeWidth: 2,
       labelTextFill: "black",
       valueTextFill: "white"
     };
@@ -56,7 +57,7 @@ var Arc = React.createClass({
           transform={rotate}
           style={{
             "fill": props.labelTextFill,
-            "strokeWidth": 2,
+            "strokeWidth": props.labelStrokeWidth,
           }}>
         >
         </line>
@@ -123,6 +124,7 @@ var DataSeries = React.createClass({
           endAngle={arc.endAngle}
           outerRadius={props.radius}
           innerRadius={props.innerRadius}
+          labelStrokeWidth={props.labelStrokeWidth}
           labelTextFill={props.labelTextFill}
           valueTextFill={props.valueTextFill}
           fill={color(i)}
@@ -174,6 +176,7 @@ var PieChart = exports.PieChart = React.createClass({
         title={props.title}
       >
         <DataSeries
+          labelStrokeWidth={props.labelStrokeWidth}
           labelTextFill={props.labelTextFill}
           valueTextFill={props.valueTextFill}
           labels={labels}
