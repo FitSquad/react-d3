@@ -5,9 +5,11 @@ var Legend = require('./legend').Legend;
 
 var PlainChart = React.createClass({
   render: function() {
+    var title = this.props.title;
+    var titleTag = title && <h4>{this.props.title}</h4>;
     return (
       <div>
-        <h4>{this.props.title}</h4>
+        {titleTag}
         <svg width={this.props.width} height={this.props.height}>{this.props.children}</svg>
       </div>
     );
