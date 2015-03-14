@@ -10,5 +10,4 @@ npm-debug.log
 # npm package
 *.tgz
 
-# Build directory
-build/
+.module-cache
